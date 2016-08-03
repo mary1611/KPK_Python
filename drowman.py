@@ -15,7 +15,7 @@ def test_drawman():
     :return:None
     """
     pen_down()
-    for i in range(5):
+    for i in range(8):
         on_vector(10,20)
         on_vector(0,-20)
     pen_up()
