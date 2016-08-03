@@ -9,7 +9,6 @@ def init_drawman():
     t.goto(x_current,y_current)
     drawman_scale = 10
 
-
 def test_drawman():
     """
     тестироание работы Чертёжника
