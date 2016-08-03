@@ -1,14 +1,17 @@
 from turtle import turtle
-
+drawman_scale = 10
 def init_drawman():
-    global t, x_current, y_current
+    global t, x_current, y_current, _drawman_scale
     t - Turtle()
     t.penup()
     x_current = 0
     y_current = 0
     t.goto(x_current,y_current)
-    drawman_scale = 10
+    _drawman_scale (10
 
+def drawman_scale(scale):
+     global _drawman_scale
+     _drawman_scale = scale
 def test_drawman():
     """
     тестироание работы Чертёжника
@@ -34,7 +37,7 @@ def to_point(x,y):
     global x_current, y_current
     x_current = x
     y_current = y
-    t.goto(drawman_scale*x_current, drawman_scale*y_current)
+    t.goto(_drawman_scale*x_current, _drawman_scale*y_current)
 
 init_drawman()
 if _name_ =='_main_':
