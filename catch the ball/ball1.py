@@ -4,7 +4,8 @@ from random import choice, randint
 ball_initial_number = 50
 ball_minimal_radius = 15
 ball_maximal_radius = 45
-ball_avaliable_color = ['green', 'blue', 'red','lightgrey','#FF00FF', '#FFFF00']
+ball_available_colors = ['green', 'blue', 'red','lightgrey',
+                        '#FF00FF', '#FFFF00']
 
 
 def click_ball(event):
@@ -15,7 +16,7 @@ def click_ball(event):
     А также засчитывать очки польз-ля
     """
     obj=canvas.find_closest(event.x,event.y)
-    x1,y1,x2,y2 = canvas.coors(obj)
+    x1,y1,x2,y2 = canvas.coords(obj)
     
     if x1 <= event.x <= x2 and y1 <= event.y <=y2:
         canvas.delete(obj)
@@ -33,9 +34,9 @@ def move_all_balls(event):
 
 
 def create_random_ball():
-    R=randint(ball_minimal_radius, ball_minimal_radius)
-    x=randint(0,int.canvas['width']-1-R)
-    y=randint(0,int.canvas['height']-1-R)
+    R=randint(ball_minimal_radius, ball_maximal_radius)
+    x=randint(0+R,int(canvas['width'])-1-R)
+    y=randint(0+R,int(canvas['height'])-1-R)
     canvas.create_oval(x,y,x+2*R, y+2*R, width=1, fill=random_color())
     """
     Создает шарик в случайном месте игрового холста canvas
@@ -47,7 +48,7 @@ def random_color():
     """
     :return:Случайный цвет из некоторого набора цветов
     """
-    return choice(ball_avaliable_color)
+    return choice(ball_available_colors)
 
 
 def init_ball_catch_game():
@@ -69,7 +70,6 @@ def init_main_window():
     canvas.bind("<Motion>")
     canvas.pack()
 
-    for i in range(10):
 
 if __name__ == "__main__":
     init_main_window()
