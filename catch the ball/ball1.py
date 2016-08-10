@@ -4,8 +4,7 @@ from random import choice, randint
 ball_initial_number = 50
 ball_minimal_radius = 15
 ball_maximal_radius = 45
-ball_avaliable_color = ['green', 'blue', 'red','lightgrey',
-                        '#FF00FF', '#FFFF00']
+ball_avaliable_color = ['green', 'blue', 'red','lightgrey','#FF00FF', '#FFFF00']
 
 
 def click_ball(event):
