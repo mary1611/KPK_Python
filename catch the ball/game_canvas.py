@@ -20,7 +20,7 @@ canvas.pack()
 
 line = canvas.create_line(0,0,10, 10)
 for i in range(10):
-    canvas.create_oval(i*40, i*40, i*40+10, i*40+10, fill='green', width=2)
+    canvas.create_oval(i*40, i*40, i*40+30, i*40+30, fill='green', width=2)
     
 root.mainloop()
 print ("это будет только при выходе из виджета")
